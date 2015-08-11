@@ -1,0 +1,25 @@
+{
+  "name": "mutimut",
+  "version": "1.0.0",
+  "description": "MUTate IMUTable data",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -fr build && babel src --out-dir build/",
+    "test": "mocha --compilers js:babel/register --recursive",
+    "test-watch": "mocha --compilers js:babel/register --recursive --watch --growl"
+  },
+  "keywords": [
+    "mutable",
+    "immutable",
+    "data"
+  ],
+  "author": "Mike D Pilsbury <mike.pilsbury@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "5.8.21",
+    "babel-eslint": "4.0.5",
+    "eslint": "1.1.0",
+    "expect": "1.8.0",
+    "mocha": "2.2.5"
+  }
+}
