@@ -11,7 +11,8 @@ It can be summed up like this.
 * It clones and applies changes to objects that do need to mutate; the modified object and its ancestors.
 
 ## Why
-The driver was [redux reducers](http://rackt.github.io/redux/docs/basics/Reducers.html).
+The driver was [redux reducers](http://rackt.github.io/redux/docs/basics/Reducers.html),
+with their requirements for pure functions, with no side effectsand no mutations.
 
 Libraries like
 [Immutable](https://github.com/facebook/immutable-js) or
@@ -26,7 +27,7 @@ _shouldComponentUpdate_ implementations.
 
 ## Examples
 Set a value somewhere in a graph.
-Specify path either as an array, or in dotted string.
+Specify the path either as an array, or in dotted string.
 ```
   import {set} from 'mutimut';
 
