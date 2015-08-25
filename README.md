@@ -12,7 +12,7 @@ It can be summed up like this.
 
 ## Why
 The driver was [redux reducers](http://rackt.github.io/redux/docs/basics/Reducers.html),
-with their requirements for pure functions, with no side effectsand no mutations.
+with their requirements for pure functions, with no side effects and no mutations.
 
 Libraries like
 [Immutable](https://github.com/facebook/immutable-js) or
