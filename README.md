@@ -26,10 +26,10 @@ Yet it is still suitable for shallow equality testing in
 _shouldComponentUpdate_ implementations.
 
 ## Examples
-Set a value somewhere in a graph.
+Set or update a value somewhere in an object graph.
 Specify the path either as an array, or in dotted string.
 ```
-  import {set} from 'mutimut';
+  import {set, update} from 'mutimut';
 
   const state = {
     array : [1, 2, 4, 8],
@@ -41,8 +41,11 @@ Specify the path either as an array, or in dotted string.
 
   const state3 = set(state, 'nested.b', 30);
   // { array: [1, 2, 4, 8], nested: {a: 1, b: 30} }
+
+  const state2 = update(state, ['nested', 'b'], value => value + 3);
+  // { array: [1, 2, 4, 8], nested: {a: 1, b: 5} }
 ```
-Note that in the both cases new `state` and `nested` objects have been created.
+Note that in all cases new `state` and `nested` objects have been created.
 However the `array` is not cloned; the original one is kept.
 
 ## API
