@@ -2,6 +2,11 @@
   "name": "mutimut",
   "version": "1.0.0",
   "description": "MUTate IMUTable data",
+  "homepage": "https://github.com/pekim/mutimut",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pekim/mutimut.git"
+  },
   "main": "lib/index.js",
   "scripts": {
     "build": "rm -fr lib && babel src --out-dir lib/",
