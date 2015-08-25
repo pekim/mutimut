@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -fr build && babel src --out-dir build/",
     "test": "mocha --compilers js:babel/register --recursive",
-    "test-watch": "mocha --compilers js:babel/register --recursive --watch --growl"
+    "test:watch": "mocha --compilers js:babel/register --recursive --watch --growl"
   },
   "keywords": [
     "mutable",
