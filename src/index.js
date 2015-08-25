@@ -1,6 +1,6 @@
 function update(object, path, mutator) {
   if (!path || path.length === undefined) {
-    throw new Error('expected path to be a non-empty array');
+    throw new Error(`expected path (${path}) to be a string or an array`);
   }
 
   if (typeof path === 'string') {
@@ -8,22 +8,27 @@ function update(object, path, mutator) {
   }
 
   const key = path[0];
+
+  if (path.length === 0) {
+    return object;
+  } else if (path.length === 1) {
+    const value = mutator(object[key]);
+    return cloneAndUpdate(object, key, value);
+  } else {
+    const value = update(object[key], path.slice(1), mutator);
+    return cloneAndUpdate(object, key, value);
+  }
+}
+
+function cloneAndUpdate(object, key, value) {
   const newObject = Array.isArray(object)
     ? object.slice(0)
     : Object.assign({}, object)
   ;
 
-  if (path.length === 0) {
-    return object;
-  } else if (path.length === 1) {
-    newObject[key] = mutator(object[key]);
+  newObject[key] = value;
 
-    return newObject;
-  } else {
-    newObject[key] = update(object[key], path.slice(1), mutator);
-
-    return newObject;
-  }
+  return newObject;
 }
 
 function set(object, path, value) {
