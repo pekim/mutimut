@@ -2,9 +2,10 @@
   "name": "mutimut",
   "version": "1.0.0",
   "description": "MUTate IMUTable data",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "rm -fr build && babel src --out-dir build/",
+    "build": "rm -fr lib && babel src --out-dir lib/",
+    "prepublish": "npm run build",
     "test": "mocha --compilers js:babel/register --recursive",
     "test:watch": "mocha --compilers js:babel/register --recursive --watch --growl"
   },
